@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi More - Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: #e3e4e8; /* soft muted grey (Light Mode Background) */
+            color: #333; /* Dark Mode Text */
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 70px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background: #23272f; /* Dark Mode Background */
+            color: #f3f3f3; /* Light Grey Text */
+        }
+
+    /* --- DARK MODE SPECIFIC STYLES --- */
+
+    /* Navigation */
+    body.dark-mode nav {
+        background: #23272f;
+        border-bottom: 3px solid #444;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+        padding: 15px 0;
+    }
+    body.dark-mode .logo {
+        color: #d3d3d3; /* Changed from #f3f3f3 (white) to light grey */
+    }
+    body.dark-mode .nav-links a {
+        color: #f3f3f3;
+    }
+    body.dark-mode .nav-links a:hover {
+        color: #e0e0e0;
+    }
+    body.dark-mode .nav-links a::after {
+        background: #f3f3f3;
+    }
+
+    /* Hero Section */
+    body.dark-mode .hero {
+        background: linear-gradient(135deg, #23272f 0%, #444 100%);
+        color: #f3f3f3;
+    }
+    body.dark-mode .hero p {
+        color: #e0e0e0;
+    }
+    body.dark-mode .btn {
+        background: #444;
+        color: #f3f3f3;
+        border-color: #444;
+    }
+    body.dark-mode .btn:hover {
+        background: #444;
+        color: #f3f3f3;
+    }
+    body.dark-mode .btn-outline {
+        background: transparent;
+        color: #f3f3f3;
+        border: 2px solid #f3f3f3;
+    }
+    body.dark-mode .btn-outline:hover {
+        background: #f3f3f3;
+        color: #23272f;
+    }
+
+    /* Sections & Typography */
+    body.dark-mode section {
+        background: #23272f;
+    }
+    body.dark-mode section:nth-child(even) {
+        background: #292c33;
+    }
+    body.dark-mode .section-title {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+    body.dark-mode .section-title::after {
+        background: #d3d3d3; /* Changed to light grey */
+    }
+    body.dark-mode .btn.learn-more {
+        background: #ffffff;
+        color: #23272f;
+        border: 2px solid #ffffff;
+    }
+    body.dark-mode .btn.learn-more:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+    body.dark-mode .btn.learn-more:active {
+        background: #888888;
+        color: #ffffff;
+        border-color: #888888;
+    }
+
+    /* About Section */
+    body.dark-mode .about-stats {
+        background: #292c33;
+        border-left: 4px solid #444;
+    }
+    body.dark-mode .about-text h3 {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+    body.dark-mode .about-text p {
+        color: #e0e0e0;
+    }
+    body.dark-mode .contact-info a {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+    body.dark-mode .contact-info a:hover {
+        color: #e0e0e0;
+    }
+    body.dark-mode .stat-number {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+
+    /* Experience & Cards */
+    body.dark-mode .experience-item {
+        background: #292c33;
+        border-left: 4px solid #444;
+        color: #f3f3f3;
+    }
+    body.dark-mode .experience-item h3 {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+    /* Explicitly ensure all text within the item is light grey */
+    body.dark-mode .experience-item .company,
+    body.dark-mode .experience-item .date,
+    body.dark-mode .experience-item li {
+        color: #e0e0e0 !important;
+    }
+
+    /* Projects */
+    body.dark-mode .project-card {
+        background: #292c33;
+        border-top: 4px solid #444;
+        color: #fff;
+    }
+    body.dark-mode .project-header {
+        background: #444;
+        color: #f3f3f3;
+    }
+    body.dark-mode .project-tech {
+        color: #e0e0e0;
+    }
+
+    /* Skills & Tech Stack */
+    body.dark-mode .skill-category {
+        background: #292c33;
+        border-top: 4px solid #444;
+        color: #f3f3f3;
+    }
+    body.dark-mode .skill-category h3 {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+    body.dark-mode .skill-tag {
+        background: #f3f3f3;
+        color: #23272f;
+    }
+    body.dark-mode .tech-category {
+        background: #292c33;
+        border-left: 4px solid #444;
+        color: #f3f3f3;
+    }
+    body.dark-mode .tech-category h3 {
+        color: #d3d3d3; /* Changed to light grey */
+    }
+
+    /* Documents */
+    body.dark-mode #documents div {
+        background: #292c33 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    body.dark-mode #documents h3 {
+        color: #f3f3f3 !important;
+    }
+    /* Ensure document button is light in dark mode */
+    body.dark-mode #documents .btn {
+        background: #444;
+        color: #f3f3f3;
+        border-color: #444;
+    }
+    body.dark-mode #documents .btn:hover {
+        background: #f3f3f3;
+        color: #23272f;
+    }
+
+    /* Footer */
+    body.dark-mode footer {
+        background: #23272f;
+        color: #f3f3f3;
+    }
+    body.dark-mode footer a {
+        color: #f3f3f3;
+    }
+    /* --- END DARK MODE STYLES --- */
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 3px solid #adadad;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c5282;
+            letter-spacing: 1px;
+            margin-left: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        body.dark-mode .nav-links a {
+            font-size: 0.85rem;
+        }
+
+        .nav-links a:hover {
+            color: #2c5282;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2c5282;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c5282;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #e6e6e6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #ffffff; /* Default button background (white) */
+            color: #2c5282; /* Default button text (blue) */
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 2px solid #ffffff;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        /* Learn More button active (clicked) state in light mode */
+        .btn.learn-more.active {
+            background: #2c5282;
+            color: #fff;
+            border: 2px solid #2c5282;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2c5282;
+        }
+
+        /* --- LIGHT MODE DOCUMENT BUTTON STYLES --- */
+        #documents .btn {
+            background: #2c5282; /* Blue background */
+            color: #ffffff;    /* White text */
+            border: 2px solid #2c5282;
+        }
+
+        #documents .btn:hover {
+            background: #1e3a5f; /* Darker blue on hover */
+            color: #ffffff;
+            border: 2px solid #1e3a5f;
+        }
+        /* --- END LIGHT MODE DOCUMENT BUTTON STYLES --- */
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background: #f0f1f3; /* lighter grey for sections */
+        }
+
+        section:nth-child(even) {
+            background: #e9eaed; /* alternate lighter grey */
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #2c5282;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #2c5282;
+            margin: 20px auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c5282;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a:hover {
+            color: #1e3a5f;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            background: #e9eaed;
+            padding: 30px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c5282;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience/Education/Certifications */
+        .experience-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .experience-item {
+            background: #f0f1f3;
+            padding: 30px;
+            border-left: 4px solid #2c5282;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-item h3 {
+            color: #2c5282;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .experience-item .company {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+            color: #333; /* Dark/Black text for Light Mode */
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f0f1f3;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #2c5282;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: #2c5282;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .project-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-body {
+            padding: 25px;
+            background: #f0f1f3;
+        }
+
+        .project-body ul {
+            margin-left: 20px;
+        }
+
+        .project-body li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #f0f1f3;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #2c5282;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-category h3 {
+            color: #2c5282;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-category p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack-section {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .tech-category {
+            background: #f0f1f3;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #2c5282;
+        }
+
+        .tech-category h3 {
+            color: #2c5282;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #2c5282;
+            color: white;
+            padding: 8px 16px;
+            margin: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #23272f;
+            color: #d3d3d3;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SAKSHI MORE</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="themeToggle" style="margin-left:20px;padding:8px 16px;border-radius:6px;border:none;background:#4f8edc;color:#fff;font-weight:600;cursor:pointer;transition:background 0.3s;">🌙 Dark</button>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>DATA ANALYST & ASPIRING DATA SCIENTIST</h2>
+            <p>Transforming complex data into actionable insights that drive strategic business decisions and organizational growth</p>
+            <div>
+                <a href="#about" class="btn learn-more" id="learnMoreBtn">Learn More</a>
+                <a href="#projects" class="btn btn-outline">View Work</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Professional Profile</h3>
+                    <p>Highly motivated and detail-oriented Data Analyst currently pursuing Bachelor of Engineering in Computer Engineering at Pillai's College of Engineering, Navi Mumbai.</p>
+                    <p>Specialized in leveraging Python, SQL, and business intelligence tools to extract meaningful insights from complex datasets. Proven track record in developing interactive dashboards, implementing data-driven solutions, and delivering measurable business value.</p>
+                    <p>Committed to continuous learning and applying cutting-edge analytical techniques to solve real-world business challenges.</p>
+                    <div class="contact-info">
+                        <a href="mailto:29.sakshimore@gmail.com">✉ Email</a>
+                        <a href="https://linkedin.com/in/sakshi-more" target="_blank">🔗 LinkedIn</a>
+                        <a href="https://github.com/sakshiAmore" target="_blank">💻 GitHub</a>
+                        <a href="tel:+918454866503">📞 +91 8454866503</a>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">85.6%</div>
+                        <div class="stat-label">Academic Grade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-icon">🔍</div>
+                    <h3>Data Analysis</h3>
+                    <p>Expert in Python, SQL, and data visualization tools</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">📊</div>
+                    <h3>Business Intelligence</h3>
+                    <p>Creating dashboards with Power BI and Tableau</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Development</h3>
+                    <p>Full-stack development with C# and .NET</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🧩</div>
+                    <h3>Problem Solving</h3>
+                    <p>Strong analytical and collaboration skills</p>
+                </div>
+            </div>
+            
+            <div class="tech-stack-section">
+                <h3 style="text-align: center; color: #2c5282; margin-bottom: 40px; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px;">Technical Proficiency</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <script>
+                // Change Technical Proficiency heading color in dark mode
+                document.addEventListener('DOMContentLoaded', function() {
+                    function updateTechProfColor() {
+                        var techProf = document.querySelector('.tech-stack-section h3');
+                        if (document.body.classList.contains('dark-mode')) {
+                            techProf.style.color = '#d3d3d3'; /* Updated to light grey */
+                        } else {
+                            techProf.style.color = '#2c5282';
+                        }
+                    }
+                    updateTechProfColor();
+                    document.getElementById('themeToggle').addEventListener('click', function() {
+                        setTimeout(updateTechProfColor, 10);
+                    });
+                });
+                </script>
+                    <div class="tech-category">
+                        <h3>Programming</h3>
+                        <div>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Analytics & BI</h3>
+                        <div>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Google Analytics</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Data Science</h3>
+                        <div>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Databases</h3>
+                        <div>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MS SQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Development</h3>
+                        <div>
+                            <span class="skill-tag">.NET</span>
+                            <span class="skill-tag">Android SDK</span>
+                            <span class="skill-tag">Canvas</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Tools & IDEs</h3>
+                        <div>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">Google Colab</span>
+                            <span class="skill-tag">Anaconda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documents">
+        <div class="container">
+            <h2 class="section-title">Documents</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; margin-top: 40px;">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px 28px; min-width: 260px; text-align: center;">
+                    <h3 style="color: #2c5282; margin-bottom: 18px;">Cover Letter</h3>
+                    <a href="cover-letter.txt" download class="btn" style="margin-bottom: 10px;">Download Cover Letter</a>
+                </div>
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px 28px; min-width: 260px; text-align: center;">
+                    <h3 style="color: #2c5282; margin-bottom: 18px;">Resume (PDF)</h3>
+                    <a href="SakshiAMoreResume.pdf" download class="btn" style="margin-bottom: 10px;">Download Resume (PDF)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Python and Data Science</h3>
+                    <div class="company">S-TEK IT Education, NIELIT Society</div>
+                    <div class="date">November 2021 – March 2022</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Deloitte Data Analytics Job Simulation</h3>
+                    <div class="company">Forage</div>
+                    <div class="date">Practical tasks in Data Analysis and Forensic Technology</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Data Analyst Skill Certification</h3>
+                    <div class="company">One Roadmap</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Python 101 for Data Science</h3>
+                    <div class="company">IBM / Cognitive Class</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Python, SQL & Excel Skill Certifications</h3>
+                    <div class="company">One Roadmap</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Value Added Course: Data Analysis using Python</h3>
+                    <div class="company">Pillai College of Engineering, New Panvel</div>
+                    <div class="date">Astronomical Data Analysis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Data Analyst Intern</h3>
+                    <div class="company">Unified Mentor</div>
+                    <div class="date">May 2024 – July 2024 | Remote</div>
+                    <ul>
+                        <li>Leveraged Python libraries (Pandas, Matplotlib, Seaborn) to perform in-depth data analysis and build interactive dashboards</li>
+                        <li>Handled and interpreted real-world datasets to provide actionable insights</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>C# Developer Intern</h3>
+                    <div class="company">AoT Solutions</div>
+                    <div class="date">July 2022 – August 2022 | Panvel, India</div>
+                    <ul>
+                        <li>Independently developed key features for a paperless document log system using C#, improving efficiency and streamlining documentation</li>
+                        <li>Worked on a real-time application project with secure document tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Bachelor of Engineering in Computer Engineering</h3>
+                    <div class="company">Pillai's College of Engineering, Navi Mumbai</div>
+                    <div class="date">June 2023 – Present</div>
+                </div>
+                <div class="experience-item">
+                    <h3>Diploma in Computer Technology</h3>
+                    <div class="company">Bharati Vidyapeeth Institute of Technology, Navi Mumbai</div>
+                    <div class="date">June 2020 – May 2023 | 85.6%</div>
+                </div>
+                <div class="experience-item">
+                    <h3>SSC (10th Grade)</h3>
+                    <div class="company">D.A.V. Public School, New Panvel</div>
+                    <div class="date">March 2020 | 86.6%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Myntra's Dashboard</h3>
+                        <div class="project-tech">Power BI | SQL</div>
+                    </div>
+                    <div class="project-body">
+                        <ul>
+                            <li>Conducted exploratory data analysis on sales dataset to identify key trends and performance indicators</li>
+                            <li>Designed dynamic dashboard displaying product ratings, revenue metrics, and discount analytics</li>
+                            <li>Implemented advanced filters for category, region, and temporal analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Document Issuance System</h3>
+                        <div class="project-tech">C# | .NET</div>
+                    </div>
+                    <div class="project-body">
+                        <ul>
+                            <li>Developed secure, paperless document management system during professional internship</li>
+                            <li>Integrated local database architecture for efficient data management and retrieval</li>
+                            <li>Optimized user interface to reduce paperwork and improve operational workflow</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>LChat Translator Extension</h3>
+                        <div class="project-tech">Java | Android SDK</div>
+                    </div>
+                    <div class="project-body">
+                        <ul>
+                            <li>Built floating Android translation extension enabling real-time multilingual communication</li>
+                            <li>Implemented offline translation supporting English, Hindi, Marathi, and Telugu languages</li>
+                            <li>Designed lightweight UI with optimized background services for enhanced compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer id="contact">
+        <div class="container">
+            <p style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;">SAKSHI ANKUSH MORE</p>
+            <p style="margin-bottom: 20px;">Data Analyst | Computer Engineering</p>
+            <p>
+                <a href="mailto:29.sakshimore@gmail.com">Email</a> |
+                <a href="https://linkedin.com/in/sakshi-more" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/sakshiAmore" target="_blank">GitHub</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">&copy; 2025 Sakshi More. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        function setDarkMode(on) {
+            document.body.classList.toggle('dark-mode', on);
+            themeToggle.textContent = on ? '☀️ Light' : '🌙 Dark';
+            localStorage.setItem('portfolio-dark-mode', on ? '1' : '0');
+        }
+        themeToggle.addEventListener('click', () => {
+            setDarkMode(!document.body.classList.contains('dark-mode'));
+        });
+        // On load, set mode from localStorage
+        if (localStorage.getItem('portfolio-dark-mode') === '1') {
+            setDarkMode(true);
+        }
+
+        // Learn More button active color on click (light mode only)
+        const learnMoreBtn = document.getElementById('learnMoreBtn');
+        if (learnMoreBtn) {
+            learnMoreBtn.addEventListener('mousedown', function() {
+                if (!document.body.classList.contains('dark-mode')) {
+                    this.classList.add('active');
+                }
+            });
+            learnMoreBtn.addEventListener('mouseup', function() {
+                this.classList.remove('active');
+            });
+            learnMoreBtn.addEventListener('mouseleave', function() {
+                this.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
